@@ -10,7 +10,7 @@ app = Flask(__name__)
 # route to handle the landing page of a website.
 @app.route('/')
 def start_here():
-    return "Hi! This is the home page."
+    return "Hi! This is the home page. <br><a href='/hello'>Click Me!</a>"
 
 # route to display a simple web page
 @app.route('/hello')
@@ -29,6 +29,23 @@ def greet_person():
 
     return render_template("compliment.html", person=player, compliment=compliment)
 
+@app.route('/game')
+def show_game_form():
+    player_answer = request.args.get("game")
+
+    if player_answer == "no":
+        return render_template("goodbye.html")
+    else:
+        return render_template("game.html")
+
+@app.route('/madlib')
+def show_madlib():
+    select_person = request.args.get("person")
+    select_color = request.args.get("color")
+    select_noun = request.args.get("noun")
+    select_adj = request.args.get("adjective")
+
+    return render_template("madlib.html", person = select_person, color = select_color, noun = select_noun, adjective = select_adj)
 
 if __name__ == '__main__':
     # debug=True gives us error messages in the browser and also "reloads" our web app

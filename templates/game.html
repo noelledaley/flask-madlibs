@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Play a game!</title>
+</head>
+<body>
+    <h1>Play a game!</h1>
+    <form action="/madlib">
+        <label>Pick a person:
+            <input type="radio" name="person" value="obama">Barack Obama
+            <input type="radio" name="person" value="janetweiss">Janet Weiss
+            <input type="radio" name="person" value="kevinhart">Kevin Hart
+        </label>
+        <br>
+
+        <label>Pick a color:
+            <select name="color">
+                <option value="blue">Blue</option>
+                <option value="green">Green</option>
+                <option value="perriwinkle">Perriwinkle</option>
+            </select>
+        <br>
+
+        <label>Pick a noun:
+            <input type="text" name="noun">
+        </label>
+        <br>
+
+        <label>Pick an adjective:
+            <select name="adjective">
+                <option value="hairy">Hairy</option>
+                <option value="quick">Quick</option>
+                <option value="smelly">Smelly</option>
+            </select>
+        </label>
+
+        <br>
+
+        <input type="submit">
+    </form>
+</body>
+</html>
