@@ -1,12 +1,31 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Play a game!</title>
-</head>
-<body>
-    There once was a {{ color }} {{ noun }} sitting in the Hackbright Lab. When {{ person }} went to pick it up, it burst into flames in a totally {{ adjective }} way.
-</body>
-</html>
+{% extends 'base.html' %}
+{% block title %}Play a game!{% endblock %}
 
+{% block content %}
 
+    
+    {% if madlib_choice == 1 %}
+    <p>There once was a {{ color }} {{ noun }} sitting in the Hackbright Lab. When {{ person }} went to pick it up, it burst into flames in a totally {{ adjective }} way.</p>
 
+    {% elif madlib_choice == 2 %}
+    <p>To whom it may concern:<br><br>
+        Yesterday at approximately 2p.m. we received a complaint regarding a {{ color }} {{ noun }} blocking the road. When provoked, the {{ noun }} became {{ adjective }} until I hit it with a stick. In the process, your car was destroyed.<br><br>
+
+        Regards,<br>
+        {{ person }}
+
+    </p>
+
+    {% else %}
+    <h1>Reasons why I love sandwiches:</h1><br>
+
+        <ul>
+            <li>They remind me of {{ person }}.</li>
+            <li>They taste like {{ noun }}.</li>
+            <li>When I eat them, I feel {{ adjective }}.</li>
+            <li>My favorite sandwich is {{ color }} turkey. </li>
+        </ul>
+
+    {% endif %}
+
+{% endblock %}

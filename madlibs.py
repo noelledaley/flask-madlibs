@@ -1,4 +1,4 @@
-from random import choice
+from random import choice, randrange
 
 from flask import Flask, render_template, request
 
@@ -48,8 +48,12 @@ def show_madlib():
     select_color = request.args.get("color")
     select_noun = request.args.get("noun")
     select_adj = request.args.get("adjective")
+  
+    # choose random number that will correlate with madlib story
+    random_madlib = randrange(1, 4)
+    # pass random number into template
 
-    return render_template("madlib.html", person = select_person, color = select_color, noun = select_noun, adjective = select_adj)
+    return render_template("madlib.html", madlib_choice = random_madlib, person = select_person, color = select_color, noun = select_noun, adjective = select_adj)
 
 
 if __name__ == '__main__':

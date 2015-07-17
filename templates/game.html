@@ -1,42 +1,48 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Play a game!</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% block title %}Play a game!{% endblock %}
+
+{% block content %}
     <h1>Play a game!</h1>
     <form action="/madlib">
-        <label>Pick a person:
-            <input type="radio" name="person" value="obama">Barack Obama
-            <input type="radio" name="person" value="janetweiss">Janet Weiss
-            <input type="radio" name="person" value="kevinhart">Kevin Hart
+        <label>Pick a person:<br>
+            <input type="radio" name="person" value="Barack Obama">Barack Obama
+            <input type="radio" name="person" value="Janet Weiss">Janet Weiss
+            <input type="radio" name="person" value="Kevin Hart">Kevin Hart
+            <input type="radio" name="person" value="Angelina Jolie">Angelina Jolie
+            <input type="radio" name="person" value="my Mom">My mom
         </label>
-        <br>
+        <br><br>
 
         <label>Pick a color:
             <select name="color">
                 <option value="blue">Blue</option>
                 <option value="green">Green</option>
                 <option value="perriwinkle">Perriwinkle</option>
+                <option value="olive">Olive</option>
+                <option value="burgundy">Burgundy</option>
+                <option value="canary yellow">Canary Yellow</option>
             </select>
-        <br>
+        <br><br>
 
         <label>Pick a noun:
             <input type="text" name="noun">
         </label>
-        <br>
+        <br><br>
 
         <label>Pick an adjective:
             <select name="adjective">
                 <option value="hairy">Hairy</option>
                 <option value="quick">Quick</option>
                 <option value="smelly">Smelly</option>
+                <option value="adorable">Adorable</option>
+                <option value="babyish">Babyish</option>
+                <option value="fabulous">Fabulous</option>
+                <option value="puzzling">Puzzling</option>
             </select>
         </label>
 
-        <br>
+        <br><br>
 
         <input type="submit">
     </form>
-</body>
-</html>
+{% endblock %}
